@@ -18,10 +18,12 @@ import math
 import numpy as np
 import torch as th
 
-from src.modeling.diffusion.nn import mean_flat
-from src.modeling.diffusion.losses import normal_kl
+import sys
+sys.path.append('/kaggle/working/minimal-text-diffusion/src')
+from modeling.diffusion.nn import mean_flat
+from modeling.diffusion.losses import normal_kl
 
-from src.utils.show_sampling_progress import pprint_sentences
+from utils.show_sampling_progress import pprint_sentences
 
 
 def get_named_beta_schedule(schedule_name, num_diffusion_timesteps):
