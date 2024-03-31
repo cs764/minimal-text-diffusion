@@ -1,7 +1,9 @@
 import numpy as np
 import torch as th
 
-from src.modeling.diffusion.gaussian_diffusion import GaussianDiffusion
+import sys
+sys.path.append('/kaggle/working/minimal-text-diffusion/src')
+from modeling.diffusion.gaussian_diffusion import GaussianDiffusion
 
 
 def space_timesteps(num_timesteps, section_counts):
