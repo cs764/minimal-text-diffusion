@@ -12,7 +12,7 @@ import os
 
 # Assuming '/kaggle/working/minimal-diffusion/src' is the correct full path to your 'src' directory:
 sys.path.append('/kaggle/working/minimal-diffusion/src')
-
+print(sys.path)
 # Now import directly from the modules and packages within 'src', without the 'src.' prefix.
 from utils import dist_util, logger
 from modeling.diffusion.resample import create_named_schedule_sampler
