@@ -10,16 +10,17 @@ from torch.nn.parallel.distributed import DistributedDataParallel as DDP
 from torch.optim import AdamW
 from tqdm import tqdm
 
-from src.utils import dist_util, logger
-from src.utils.fp16_util import (
+sys.path.append('/kaggle/working/minimal-text-diffusion/src')
+from utils import dist_util, logger
+from utils.fp16_util import (
     make_master_params,
     master_params_to_model_params,
     model_grads_to_master_grads,
     unflatten_master_params,
     zero_grad,
 )
-from src.modeling.diffusion.nn import update_ema
-from src.modeling.diffusion.resample import LossAwareSampler, UniformSampler
+from modeling.diffusion.nn import update_ema
+from modeling.diffusion.resample import LossAwareSampler, UniformSampler
 
 
 # For ImageNet experiments, this was a good default value.
