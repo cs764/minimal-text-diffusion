@@ -5,18 +5,18 @@ Train a diffusion model on images.
 import json, os
 import pathlib
 import pprint
-
+import sys
 import wandb
 from transformers import set_seed
 import os
 
-import sys
+# Assuming '/kaggle/working/minimal-diffusion/src' is the correct full path to your 'src' directory:
 sys.path.append('/kaggle/working/minimal-diffusion/src')
 
+# Now import directly from the modules and packages within 'src', without the 'src.' prefix.
+from utils import dist_util, logger
 from modeling.diffusion.resample import create_named_schedule_sampler
 from train_infer.factory_methods import create_model_and_diffusion
-from utils import dist_util, logger
-
 from train_loop import TrainLoop
 from utils import data_utils_sentencepiece
 from utils.args_utils import create_argparser, args_to_dict, model_and_diffusion_defaults
