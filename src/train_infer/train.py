@@ -9,7 +9,7 @@ import sys
 import wandb
 from transformers import set_seed
 import os
-sys.path.append('/kaggle/working/minimal-diffusion/src/')
+sys.path.append('/kaggle/working/minimal-diffusion/src/utils')
 
 from utils import dist_util, logger
 from modeling.diffusion.resample import create_named_schedule_sampler
