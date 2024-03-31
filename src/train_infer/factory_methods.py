@@ -1,6 +1,8 @@
-import src.modeling.diffusion.gaussian_diffusion as gd
-from src.modeling.diffusion.respace import SpacedDiffusion, space_timesteps
-from src.modeling.predictor.transformer_model import TransformerNetModel
+import sys
+sys.path.append('/kaggle/working/minimal-text-diffusion/src')
+import modeling.diffusion.gaussian_diffusion as gd
+from modeling.diffusion.respace import SpacedDiffusion, space_timesteps
+from modeling.predictor.transformer_model import TransformerNetModel
 
 
 def create_model_and_diffusion(
