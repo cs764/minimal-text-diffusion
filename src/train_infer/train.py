@@ -5,11 +5,12 @@ Train a diffusion model on images.
 import json, os
 import pathlib
 import pprint
-import sys
+
 import wandb
 from transformers import set_seed
 import os
 
+import sys
 sys.path.append('/kaggle/working/minimal-diffusion/src')
 
 from modeling.diffusion.resample import create_named_schedule_sampler
