@@ -16,12 +16,13 @@ print(sys.path)
 # Now import directly from the modules and packages within 'src', without the 'src.' prefix.
 from utils import dist_util, logger
 from modeling.diffusion.resample import create_named_schedule_sampler
-from train_infer.factory_methods import create_model_and_diffusion
+
 from train_loop import TrainLoop
 from utils import data_utils_sentencepiece
 from utils.args_utils import create_argparser, args_to_dict, model_and_diffusion_defaults
 from utils.custom_tokenizer import create_tokenizer
-
+sys.path.append('/kaggle/working/minimal-text-diffusion/src/train_infer')
+from factory_methods import create_model_and_diffusion
 
 def main():
     args = create_argparser().parse_args()
