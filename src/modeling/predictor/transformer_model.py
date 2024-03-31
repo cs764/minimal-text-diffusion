@@ -6,7 +6,9 @@ import torch
 
 import torch as th
 import torch.nn as nn
-from src.modeling.diffusion.nn import (
+import sys
+sys.path.append('/kaggle/working/minimal-text-diffusion/src')
+from modeling.diffusion.nn import (
     SiLU,
     linear,
     timestep_embedding,
