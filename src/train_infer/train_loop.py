@@ -9,7 +9,7 @@ import torch.distributed as dist
 from torch.nn.parallel.distributed import DistributedDataParallel as DDP
 from torch.optim import AdamW
 from tqdm import tqdm
-
+import sys
 sys.path.append('/kaggle/working/minimal-text-diffusion/src')
 from utils import dist_util, logger
 from utils.fp16_util import (
