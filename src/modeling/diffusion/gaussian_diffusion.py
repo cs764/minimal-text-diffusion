@@ -245,8 +245,8 @@ class GaussianDiffusion:
         """
         assert "input_ids" in model_kwargs
         input_ids = model_kwargs.pop("input_ids").to(t.device)
-        x_start_mean = model.model.module.get_embeds(input_ids)
-
+        #x_start_mean = model.model.module.get_embeds(input_ids)
+        x_start_mean = model.module.get_embeds(input_ids)
         std = _extract_into_tensor(
             self.sqrt_one_minus_alphas_cumprod,
             th.tensor([0]).to(x_start_mean.device),
