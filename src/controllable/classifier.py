@@ -12,15 +12,16 @@ from torch.utils.data import DataLoader
 from transformers.models.bert.modeling_bert import BertConfig, BertModel, BertPooler
 from transformers import AutoTokenizer
 from transformers.modeling_outputs import SequenceClassifierOutput
-sys.path.append('/kaggle/working/minimal-diffusion/src/')
-from modeling.diffusion.gaussian_diffusion import GaussianDiffusion
+sys.path.append('/kaggle/working/minimal-diffusion/src/modeling')
+from diffusion.gaussian_diffusion import GaussianDiffusion
 
 
 from train_infer.factory_methods import create_model_and_diffusion
-from src.utils import dist_util
-from src.utils.args_utils import create_argparser, args_to_dict, model_and_diffusion_defaults
-from src.utils.data_utils_sentencepiece import TextDataset
-from src.utils.custom_tokenizer import create_tokenizer
+sys.path.append('/kaggle/working/minimal-diffusion/src')
+from utils import dist_util
+from utils.args_utils import create_argparser, args_to_dict, model_and_diffusion_defaults
+from utils.data_utils_sentencepiece import TextDataset
+from utils.custom_tokenizer import create_tokenizer
 from utils.logger import log
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
