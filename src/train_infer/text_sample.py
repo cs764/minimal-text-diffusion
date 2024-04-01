@@ -8,12 +8,14 @@ import numpy as np
 import torch as th
 import torch.distributed as dist
 from transformers import set_seed
-from src.utils import dist_util, logger
+import sys
+sys.path.append('/kaggle/working/minimal-text-diffusion/src')
+from utils import dist_util, logger
 
-from src.utils.args_utils import *
+from utils.args_utils import *
 from train_infer.factory_methods import create_model_and_diffusion
-from src.utils.args_utils import create_argparser, args_to_dict, model_and_diffusion_defaults
-from src.utils.custom_tokenizer import create_tokenizer
+from utils.args_utils import create_argparser, args_to_dict, model_and_diffusion_defaults
+from utils.custom_tokenizer import create_tokenizer
 
 
 
